@@ -56,6 +56,16 @@ Accuracy - 99.20 %
 Accuracy - 99.19 %
 Accuracy - 99.17 %
 
+We have included 3 programs here for demonstration and here are the highlights of those
+
+![](images/99.11.png)
+
+![](images/99.19.png)
+
+![](images/99.23.png)
+
+
+
 
 Below is just a pictorial representation of how convolution reduces the image size by increasing the receptive field. 
 The Illustration shows an image of 9 x 9 at the beginning where as in reality the images are very big and complex in nature. We will see in future how to apply different techniques on then, but for simplicity of our understanding we will use small size kernels here. If you haven’t seen the previous article which talks about why a 3 x 3 kernel is the best one to use then please go back and read through it. 
