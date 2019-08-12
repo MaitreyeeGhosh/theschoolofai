@@ -1,8 +1,9 @@
 Assignment 3
+===================
 Name : Nihar Kanungo Batch : 6:30 AM , Monday
 
 
-Attn theschoolofai admin :
+Attn!!!! theschoolofai admin :
 ===========================
 
 The Assignment3_99.23_Accuracy.ipynb is the latest one with proper comments . The earlier ones with 99.12% accuracy and 99.19% accuracy is included to show the improvements achieved . Those doesn't include comments and can be referred if the reader wants to see the earlier runs for comparision. Having said that there are images pasted to this readme file which shows the difference between the three networks.
