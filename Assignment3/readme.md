@@ -57,5 +57,6 @@ Accuracy - 99.19 %
 Accuracy - 99.17 %
 
 
-![](Assignment4/images/BN1.png)
 ** I am still trying to achieve the expected result . If any better result is found then the updated code will be published in the repository.
+
+![](Assignment4/images/BN1.png)
