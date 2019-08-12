@@ -42,6 +42,16 @@ Should not have applied Maxpooling before 2-4 layers of the conversion into numb
 Maxpooling should be applied on receptive field of at least 5 x 5 or 7 x 7
 Activation function should be relu on conv 2D
 
+Below is just a pictorial representation of how convolution reduces the image size by increasing the receptive field. 
+The Illustration shows an image of 9 x 9 at the beginning where as in reality the images are very big and complex in nature. We will see in future how to apply different techniques on then, but for simplicity of our understanding we will use small size kernels here. If you haven’t seen the previous article which talks about why a 3 x 3 kernel is the best one to use then please go back and read through it. 
+
+1[](images/conv.png)
+
+We can also see how varying batch size affects the performance of the network. We have used a different batch size in our 3rd example which gave us an accuracy of 99.23 %
+
+1[](images/Batchsize.png)
+
+
 Expected Result
 ===========
 To get >= 99.4 % accuracy
@@ -66,8 +76,17 @@ We have included 3 programs here for demonstration and here are the highlights o
 
 
 
+Summary
+-----------
+EVen after trying for multiple times we are unable to achieve the magic number 99.4 % test accuracy . What could be the reason ?
 
-Below is just a pictorial representation of how convolution reduces the image size by increasing the receptive field. 
-The Illustration shows an image of 9 x 9 at the beginning where as in reality the images are very big and complex in nature. We will see in future how to apply different techniques on then, but for simplicity of our understanding we will use small size kernels here. If you haven’t seen the previous article which talks about why a 3 x 3 kernel is the best one to use then please go back and read through it. 
+1. Less number of epochs ?
+2. Smaller Batch size ?
+3. Less number of parameters ?
+4. The Optimizer ? 
+or something else ???
 
+Let's drill down more onto each of the factors and see of we achieve the magic number . So stay tuned for my next post to see if we can fix the issue and achieve our target
+
+*******************  Prepared by : Nihar Kanungo*******************************
 
