@@ -61,9 +61,13 @@ Actual Result
 Best Results till now ( 2nd August 5:50 PM)
 
 Accuracy - 99.23 %
+
 Accuracy - 99.21 %
+
 Accuracy - 99.20 %
+
 Accuracy - 99.19 %
+
 Accuracy - 99.17 %
 
 We have included 3 programs here for demonstration and here are the highlights of those
