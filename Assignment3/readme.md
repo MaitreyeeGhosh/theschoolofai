@@ -42,6 +42,12 @@ Should not have applied Maxpooling before 2-4 layers of the conversion into numb
 Maxpooling should be applied on receptive field of at least 5 x 5 or 7 x 7
 Activation function should be relu on conv 2D
 
+Expected Result
+===========
+To get >= 99.4 % accuracy
+
+Description
+=============
 Below is just a pictorial representation of how convolution reduces the image size by increasing the receptive field. 
 The Illustration shows an image of 9 x 9 at the beginning where as in reality the images are very big and complex in nature. We will see in future how to apply different techniques on then, but for simplicity of our understanding we will use small size kernels here. If you haven’t seen the previous article which talks about why a 3 x 3 kernel is the best one to use then please go back and read through it. 
 
@@ -52,9 +58,6 @@ We can also see how varying batch size affects the performance of the network. W
 ![](images/Batchsize.png)
 
 
-Expected Result
-===========
-To get >= 99.4 % accuracy
 
 Actual Result
 ===========
