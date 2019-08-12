@@ -1,4 +1,4 @@
-![](images/20180516_114848.jpg)
+
 
 Assignment 3
 Name : Nihar Kanungo Batch : 6:30 AM , Monday
