@@ -16,36 +16,52 @@ This is a simple Image Recognition program which makes use of the MNIST preproce
 
 Input
 ===========
-1) 60000 Handwritten digit images (between 0-9) 2) The Images are already segreegated as Train and Test Data with the respective target values
+1) 60000 Handwritten digit images (between 0-9) 
+
+2) The Images are already segreegated as Train and Test Data with the respective target values
 
 Environment
 ===========
 Development - Colab GPU , Jupyter Notebook
+
 Repository : Github
 
 Algorithm
 ===========
 Linear Model 
+
 Convolutional Neural Network (2D) - Gray Scale images
+
 Maxpooling 
+
 Softmax Activation function
+
 loss Function : Categorical Crossentropy
+
 Optimizer=Adam
+
 Metrics=accuracy
 
 Parameters
 ===========
 Batch Size - Variable 
+
 Epochs - Variable
+
 Kernel Size - Variable (Advisable to use 3 * 3)
+
 Number of Kernels - Variable 
 
 Condition
 ===========
 The Number of parameters < 20,000
+
 Should use only Conv2D
+
 Should not have applied Maxpooling before 2-4 layers of the conversion into number of classes (10 in this case)
+
 Maxpooling should be applied on receptive field of at least 5 x 5 or 7 x 7
+
 Activation function should be relu on conv 2D
 
 Expected Result
