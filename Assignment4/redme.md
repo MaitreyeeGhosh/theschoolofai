@@ -1,2 +1,2 @@
 
-![](Assignment4/images/BN1.png)
+![](images/BN1.png)
