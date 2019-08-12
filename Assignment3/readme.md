@@ -57,6 +57,8 @@ We can also see how varying batch size affects the performance of the network. W
 
 ![](images/Batchsize.png)
 
+Looks like the higher batch size may help to generalize well. Let's figure it out if that's the case
+
 
 
 Actual Result
