@@ -7,6 +7,7 @@ To Read https://mc.ai/tutorial-2-94-accuracy-on-cifar10-in-2-minutes/ (Links to 
 Write a report on both. Focus on the Fenwicks library defined in the first blog, and focus on all the steps take by David in 8 posts from the second link.
 
 #Train a Resnet very fast with >94% Accuracy
+------------------------------------------------
 
 Executive Summary
 ------------------  
@@ -62,7 +63,7 @@ we can preload random training data onto the GPU to remove data loading and tran
 Let’s See all the different experiments performed one by one and see how it improves/degrades the training time by keeping the accuracy of 94% in mind. Please note the final outcome after all experiments was 94% accuracy with very less training time, it may happen that some of the experiments resulted in achieving one at the cost of loosing control over the other, but finally it achieved what it planned to.
 
 #Experiment-1 
-
+------------------------------------------------
 
 Observation 
 ------------
@@ -92,7 +93,7 @@ With this improvement in place the time for a 35-epoch training run to 94% accur
 
 
 #Experiment-2 
-
+------------------------------------------------
 Observation 
 ------------
 
@@ -104,6 +105,7 @@ Result
 Cutting training to 30 epochs, would lead to a 161s finish, easily beating our current target, but simply accelerating the baseline learning rate schedule, leads to 0/5 training runs reaching 94% accuracy.
 
 #Experiment-3 - Cutout
+------------------------------------------------
 
 Using random 8×8 square subsets of the training images, in addition to our standard data augmentation of padding, clipping and randomly flipping left-right.
 
@@ -113,6 +115,8 @@ Result
 Results on the baseline 35 epoch training schedule are promising with 5/5 runs reaching 94% accuracy and the median run reaching 94.3%, a small improvement over the baseline
 
 #Experiment-4 – Manual Optimization 
+------------------------------------------------
+
 A bit of manual optimization of the learning rate schedule (pushing the peak learning rate earlier and replacing the decay phase with a simple linear decay since the final epochs of overfitting don’t seem to help with the extra regularization in place)
 
 Result
@@ -123,6 +127,7 @@ If we accelerate the learning rate schedule to 30 epochs, 4/5 runs reach 94% wit
 
 
 #Experiment-5 – Higher Batchsize 
+------------------------------------------------
 
 We can push the batch size higher to 768 
 
@@ -134,6 +139,7 @@ These can also be considered
 we remain below 25% compute efficiency on a single GPU and there are known optimizations that could improve this. Secondly, it should be possible to reduce the number of training epochs using techniques such as Mixup regularisation and AdamW training
 
 #Architecture 
+------------------------------------------------
 
 One of the ways to consider improvements is by modifying or considering an alternate Architecture to train. This would give an idea about how the different models behave under similar conditions and which one would be a best fit for further enhancements/improvements.
 
@@ -209,6 +215,7 @@ Result
 The rate of improvement from training for longer seems slow compared to the improvements achievable by using deeper architectures. Of the architectures tested, perhaps the most promising is Residual: L1+L3 which we fortuitously chose to illustrate above. This network achieves 93.8% test accuracy in 66s for a 20-epoch run. If we extend training to 24 epochs, 7 out of 10 runs reach 94% with a mean accuracy of 94.08% and training time of 79s!
 
 #Impact of Hyper Parameters
+------------------------------------------------
 
 It’s time to address this issue and ask what our hyperparameter neglect has cost.
 
@@ -238,6 +245,7 @@ So, to conclude
  a number of nearly flat directions in hyperparameter space. This greatly simplifies the search problem. Optimizing along these directions helps a little, but the penalty for doing so badly, is small. In the following post, we will argue that, in favorable circumstances, whole families of architectures share similar values of optimal parameters.
  
 #Weight Decay
+------------------------------------------------
 
 Our main task for today will be to shore up the two first order arguments with a more careful study of the weight norm dynamics. In the process we will find a close relation with the technique of Layer-wise Adaptive Rate Scaling which has been introduced recently in the context of large batch training on ImageNet. We study the implications of this relation and propose that it may be behind a remarkable stability in the optimal learning rate across different architectures. Let’s look in more detail at the dynamics of weight norms in the presence of weight decay.
 
@@ -248,6 +256,7 @@ After performing various experiments, one might think that layers with different
 A possible explanation is that the LARS-like dynamics of SGD with weight decay, provides a useful type of adaptive scaling for the different layers so that each receive the same step size in scale invariant units and that this renders manual tuning of learning rates per layer unnecessary. One might probe this experimentally by manually optimizing learning rates separately for each layer and seeing to what extent optimum values coincide.
 
 #Batch Normalization
+------------------------------------------------
 
 Batch Normalization since it’s inception in the year 2015 has been very popular in training the Deep networks. Let’s see how this helped in reducing the training time. Today, we’re going to explore the detailed mechanism by which batch norm enables the high learning rates crucial for rapid training. Let’s start with a high-level view.
 
@@ -364,6 +373,7 @@ We see that even if we fixed the instability from the first three moments of the
 •	Another lesson is that batch norm seems almost ideally designed to tackle the key optimisation issue, which is indeed one of propagation of changes to channel-wise distributions. It would be very interesting to investigate the various alternatives to batch norm that have been proposed and understand if and how they manage to achieve a similar thing. These insights should also provide guidance in developing new stabilization mechanisms, potentially providing a sharper toolkit than the alternative run-it-and-see approach.
 
 #Multiple Tricks to achieve the Training Speed
+------------------------------------------------
 
 Preprocessing on the GPU (70s)
 ----------------------------------
@@ -440,6 +450,7 @@ If we remove the remaining cutout data augmentation – which is getting in the 
 
 
 #Summary
+------------------------------------------------
 
 This article is a step by step note on how David Page achieved 94% accuracy in 26seconds . For more details on the topics the reader is requested to visit the following link and read all the 8 articles .
 
