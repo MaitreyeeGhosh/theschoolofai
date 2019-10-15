@@ -37,7 +37,7 @@ Considerations
 •	If gradients are being averaged over mini-batches, then learning rates should be scaled to undo the effect and weight decay
 
 with batch size 512. Training completes in 256s and with one minor adjustment to the learning rate – increasing it by 10% – we are able to match the training curve of the base runs with batch size 128 and 3/5 runs reach 94% test accuracy.
-------------------------------------------------------------------------------------------------------------
+
 The fast training speed of the current setup comes in large part from the use of high learning rates. In the context of convex optimization (or just gradient descent on a quadratic), one achieves maximum training speed by setting learning rates at the point where second order effects start to balance first order ones and any benefits from increased first order steps are offset by curvature effects
 
 Issues
@@ -57,6 +57,7 @@ we can preload random training data onto the GPU to remove data loading and tran
 
 Let’s See all the different experiments performed one by one and see how it improves/degrades the training time by keeping the accuracy of 94% in mind. Please note the final outcome after all experiments was 94% accuracy with very less training time, it may happen that some of the experiments resulted in achieving one at the cost of loosing control over the other, but finally it achieved what it planned to.
 #Experiment-1 
+
 Observation 
 ------------
 1.	A large chunk of time is being spent on batch norm computations
@@ -111,6 +112,7 @@ we remain below 25% compute efficiency on a single GPU and there are known optim
 
 #Architecture 
 One of the ways to consider improvements is by modifying or considering an alternate Architecture to train. This would give an idea about how the different models behave under similar conditions and which one would be a best fit for further enhancements/improvements.
+
 Modification -1 - Inclusion of Residual Block
 -----------------------------------------------
 Ease optimization by creating shortcuts through the network. The hope is that the shorter paths represent shallow sub-networks which are relatively easy to train, whilst longer paths add capacity and computational depth
