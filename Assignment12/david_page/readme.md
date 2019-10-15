@@ -6,9 +6,6 @@ To Read https://mc.ai/tutorial-2-94-accuracy-on-cifar10-in-2-minutes/ (Links to 
 
 Write a report on both. Focus on the Fenwicks library defined in the first blog, and focus on all the steps take by David in 8 posts from the second link.
 
-
-
-
 #Train a Resnet very fast with >94% Accuracy
 Executive Summary
 ------------------  
@@ -42,8 +39,10 @@ The fast training speed of the current setup comes in large part from the use of
 
 Issues
 -------
+
 •	The delayed updates from mini-batching should incur the same curvature penalties as a corresponding increase in learning rate and training should become unstable. In short, if higher order effects can be neglected, you are not training fast enough
 •	second order differences between small and large batch training could accumulate over time and lead to substantially different training trajectories
+
 Claim
 -------
 •	First piece of evidence for our claim: increasing batch sizes does not immediately lead to training instability as it should if curvature was the issue, but not if the issue is forgetfulness which should be mostly unaffected by batch size
