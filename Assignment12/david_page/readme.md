@@ -7,6 +7,7 @@ To Read https://mc.ai/tutorial-2-94-accuracy-on-cifar10-in-2-minutes/ (Links to 
 Write a report on both. Focus on the Fenwicks library defined in the first blog, and focus on all the steps take by David in 8 posts from the second link.
 
 #Train a Resnet very fast with >94% Accuracy
+
 Executive Summary
 ------------------  
 The Purpose of this article is to discuss briefly about how to train a Residual Network (Resnet) very fast with over 94% accuracy on the Cifar10. The article is prepared based on the understanding of all the research performed by DAVID PAGE, The Chief Scientist Who is a Professor of Biology in MIT. 
