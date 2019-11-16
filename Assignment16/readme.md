@@ -1,4 +1,4 @@
 
-An Image of my Annotation work
+A screenshot of my Annotation work
 
 ![](images/annotation.png)
