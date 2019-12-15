@@ -5,4 +5,4 @@ With 500 Epochs
 
 With 10000 EPochs ( We could not train until NASH equilibrium due to memory and storage issue)
 
-![alt text](images/updated_500_images.gif)
+![alt text](images/Assignment19_10000epochs.gif)
