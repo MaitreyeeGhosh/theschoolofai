@@ -145,7 +145,7 @@ We compute the loss coming from the two critic models. The critic loss is the su
 1.	initialize the gradients to zero
 2.	compute the gradients
 3.	perform the weight updates
-![](images/step-12.gif)
+![](images/step-12gif.gif)
 
 Step 13
 -------------
@@ -161,7 +161,7 @@ The process from 1-5 repeats twice and then
 Now this whole process 1-6 runs twice before it does the polyak averaging for the critic targets. That means the updates would have happened 4 times
 the Actor takes state gives action , the state and action is given to critic, then it takes the mean
 
-![](images/step-13.gif)
+![](images/step-13gif.gif)
 
 Step 14
 ---------
