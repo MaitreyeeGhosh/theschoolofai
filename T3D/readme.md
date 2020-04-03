@@ -37,7 +37,7 @@ This function returns a random subset of Replay memory based on the given batch 
 4.Return the data to the calling function
 
 ![](images/sample.gif)
-![](images/step_0.png)
+![](images/step_1.png)
 
 STEP2
 -------
