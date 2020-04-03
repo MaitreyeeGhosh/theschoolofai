@@ -43,7 +43,7 @@ STEP2
 -------
 Build a Model for Actor Model and Actor Target. As we are building the same model for both hence the definition is also the same. 
 Look at the third line of the forward function which takes the x value and apply the tanh function to keep it between -1 and +1 and then multiplying that with the max action which helps them to take exactly the same angle.
-![](images/step_2.gif)
+![](images/step_2.png)
 
 Step3
 -------
@@ -56,7 +56,7 @@ There are 2 forward functions as well. One for each Critic model
 x - state , u-action
 1 for vertical concatenation #0 for Horizontal concatenation
 
-![](images/step_3.gif)
+![](images/step_3.png)
 
 # Q1 Function 
 Here we are planning to take the first critic to train the actor. It depends on the programmer, we can take critic2 or even the average. It doesn't matter in long run.
