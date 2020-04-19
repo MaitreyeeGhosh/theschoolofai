@@ -12,6 +12,18 @@ Design and develop a self-driven car network which can train the car to move fro
 8.	The car must have multiple destinations to reach
 9.	The car should be trained to take the smallest number of steps to reach destination once trained 
 10.	Need to save the best video and share along with the code 
+
+# Videos
+=========
+After several attempts I created this video before the doubt clearance class : https://youtu.be/oQMv2TxvzD4
+This model trains but due to frequent done parameters it was not training properly .
+
+Then I tried to modify the code, update the replay buffer save structure, updated Actor and Critic models , Taken care boundary conditions and added orientation . Here is the video . https://youtu.be/XtvPaOYTq7k
+
+However while trying to modify the code for better training i am getting small code issues which i am trying to fix. But as today is the deadline hence submitting with what ever i have . If i get little more extention then hopefully i should be able to complete. 
+  
+  * I have added the pending experiments to do towards the end which i will try given little extention .
+
 Characters
 ----------------
 Environment                                   Agent 
