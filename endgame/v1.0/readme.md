@@ -45,16 +45,27 @@ What I observed
 ===================
 
 # These observations are based on multiple runs of 50k steps. I could not run a full training step over 200-300k.
+
 •	More number of channels in the convolution seems to give a better result but takes a lot of time to train.
+
 •	If we set done as true every time it goes out of road the network sees very less example to train. However, over a period if it learns not to go out of road then it may mature itself to follow road only. I tried this one initially but as the processor is slow could not continue with that a lot. However, without this the car tries to move all around 
+
 •	A higher reward for moving towards the target forces the agent to go towards target but not necessarily on road 
+
 •	A balance to be made for reward for going towards target, penalty for moving away from target and penalty for going into sand. This is the key as any unbalanced reward mechanism may train the agent to choose one over another in which case the agent may not take optimal action
+
 •	By giving more random locations to start, the agent seems to learn better than always starting from the same location
+
 •	A very high penalty to go near the edges of the map initially forces the agent to go over the sands, but as the agent became more matured it started picking up the road while on edges rather on sand. But a perfect move seems to require much more training which I could not do.
+
 •	I tried by capping the action between different values (eg: -50 50 , -30 30 , -20, 20 and -10 10, -5 5). I could not find out a major difference between -5 ,5 and -10, 10. I believe more training may help to choose the best capping for action 
+
 •	Taking 3 images (front, left and right) seems to do better job than taking just the front view. But the real outcome may be seen while training more. Can’t prove a point at this time practically.
-•	I could not figure out yet the difference between cropping a 40 x 40 versus cropping 60 x60 and scaling down to 40 x 40. But theoretically the later should work better.  
+
+•	I could not figure out yet the difference between cropping a 40 x 40 versus cropping 60 x60 and scaling down to 40 x 40. But theoretically the later should work better. 
+
 •	As the roads were at the edge of the map, hence allowed the car to go to edges but the next state became sands assuming that’s what I padded to the image all 4 sides to allow car to go to the roads at the corner .
+
 •	Adding Orientation to state parameter seems to work better a little, but could not figure out the real difference. But using it 
 
 
@@ -166,14 +177,26 @@ Now let’s understand what we should see when running this program How to run?
 Just go to your prompt and say “python endgame_map.py”
 
 • Once the program runs and it allocates all necessary resources you should see a map and a car running over it.
+
 • for the first few moment the car will take random actions and
+
 • there after the network should give actions to the car 
+
 • every time the car goes into sand, we will give it a negative feedback so that the car learns not to go into the sand
+
 • every time the car goes to the edges of the map, we will give it a heavy penalty 
+
 • Every time the car runs on road, we will give it a living penalty so that it doesn’t stop there for ling and try to reach goal as fast as possible 
+
 • Every time the car moves away from goal, we will give it a negative penalty 
-• Every time the car moves towards the goal the car will get some reward for it to know that it should continue moving in that direction • Now once the car reaches its goal the goal changes and the car keep moving to the new goal
+
+• Every time the car moves towards the goal the car will get some reward for it to know that it should continue moving in that direction 
+
+• Now once the car reaches its goal the goal changes and the car keep moving to the new goal
+
+
 • The process continues and the car keeps learning 
+
 • Finally, we can stop the training and see how agent moves now
 
 
