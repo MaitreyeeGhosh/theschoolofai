@@ -161,8 +161,21 @@ The Select Action Method
 ==============================
 takes the current state and returns the action returned by the actor model The Train function loops through the iteration and for each It gets the sample from replay buffer (Current state, Action, Next State, Reward and done) Gets the next action from actor target which is required to train critic Adds random noise to the action Then gives next state and next action to both the critic targets to get target1 Q value and target2 Q value Then takes the minimum of the Q values in order to be less optimistic Adds discount factor to it and adds the reward received Then it takes the current state, current action and gives it to the critic model to get the Q values from critic model1 and critic model 2. Now it calculates the critic loss by taking the MSE loss of critic model1 vs critic target1 also adding that to MSE loss of critic model2 vs critic target2 Then the optimizer backpropagates the loss and optimizer optimize
 Now the actor loss is also calculated and the actor model optimizes it self Still once every two iterations, we update the weights of the Actor target by polyak averaging and once every two iterations, we update the weights of the Critic target by polyak averaging We need to remember here that Every 2 times the target critic runs then the actor target gets updated and ever 2 full cycle runs the actor model gets updated. That means it’s very slow due to getting updated almost once in 6 times
-Now let’s understand what we should see when running this program How to run? Just go to your prompt and say “python endgame_map.py”
-• Once the program runs and it allocates all necessary resources you should see a map and a car running over it. • for the first few moment the car will take random actions and • there after the network should give actions to the car • every time the car goes into sand, we will give it a negative feedback so that the car learns not to go into the sand • every time the car goes to the edges of the map, we will give it a heavy penalty • Every time the car runs on road, we will give it a living penalty so that it doesn’t stop there for ling and try to reach goal as fast as possible • Every time the car moves away from goal, we will give it a negative penalty • Every time the car moves towards the goal the car will get some reward for it to know that it should continue moving in that direction • Now once the car reaches its goal the goal changes and the car keep moving to the new goal • The process continues and the car keeps learning • Finally, we can stop the training and see how agent moves now
+
+Now let’s understand what we should see when running this program How to run?
+Just go to your prompt and say “python endgame_map.py”
+
+• Once the program runs and it allocates all necessary resources you should see a map and a car running over it.
+• for the first few moment the car will take random actions and
+• there after the network should give actions to the car 
+• every time the car goes into sand, we will give it a negative feedback so that the car learns not to go into the sand
+• every time the car goes to the edges of the map, we will give it a heavy penalty 
+• Every time the car runs on road, we will give it a living penalty so that it doesn’t stop there for ling and try to reach goal as fast as possible 
+• Every time the car moves away from goal, we will give it a negative penalty 
+• Every time the car moves towards the goal the car will get some reward for it to know that it should continue moving in that direction • Now once the car reaches its goal the goal changes and the car keep moving to the new goal
+• The process continues and the car keeps learning 
+• Finally, we can stop the training and see how agent moves now
+
 
 Improvements to make
 ========================
