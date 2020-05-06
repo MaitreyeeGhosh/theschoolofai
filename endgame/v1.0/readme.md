@@ -72,9 +72,18 @@ What I observed
  Videos
 ========= 
 
-After several attempts I created this video before the doubt clearance class : https://youtu.be/oQMv2TxvzD4 This model trains but due to frequent done parameters it was not training properly .
-Then I tried to modify the code, update the replay buffer save structure, updated Actor and Critic models , Taken care boundary conditions and added orientation . Here is the video . https://youtu.be/XtvPaOYTq7k
 Video after training 50 k steps https://youtu.be/sxsV2L9E7_8
+
+Past Videos
+===============
+
+After several attempts I created this video before the doubt clearance class : 
+https://youtu.be/oQMv2TxvzD4 This model trains but due to frequent done parameters it was not training properly .
+
+Then I tried to modify the code, update the replay buffer save structure, updated Actor and Critic models , Taken care boundary conditions and added orientation . 
+Here is the video . https://youtu.be/XtvPaOYTq7k
+
+
 
 •	I have added the pending experiments to do towards the end 
 
