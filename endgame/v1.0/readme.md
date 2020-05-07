@@ -89,10 +89,17 @@ Here is the video . https://youtu.be/XtvPaOYTq7k
 •	I have added the pending experiments to do towards the end 
 
 
-Environment                                             Agent
-=============                                         ===============  
+Environment                                            
+=============                                          
 
-![](images/citymap.png)                                  ![](images/car.png)
+![](images/citymap.png)     
+
+
+ Agent
+ =============== 
+ 
+
+![](images/car.png)
 
    
 Code Description
@@ -102,6 +109,8 @@ There are 3 Major programs in this assignment
 1.	The car. kv : Which is the Kivy configuration file
 2.	Endgame.ai.py – This contains the TD3 network and all associated methods
 3.	Endgame_map.py – This is the main Game program which controls the agent by getting feedback from the environment
+        Endgame_map_updt.py – Along with the cropped image it includes orientation , - orientation, Angle, distance and sand/road to state parameters 
+        
 
 Endgame_map.py
 ==================== 
@@ -215,4 +224,5 @@ Improvements to make
 1.	Train car on road only, sand only and then append both for better learning
 2.	Create own environment file and train on gpu 
 3.      Train for more number of steps 
+
 
