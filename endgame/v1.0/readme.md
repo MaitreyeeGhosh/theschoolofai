@@ -35,8 +35,9 @@ c.	If it reaches very near to the corners of the map
 10.	After every 100 episodes remember to save the model 
 11.	The First 10000 steps the agent should take random actions and after that it should take action from the TD3 Model
 12.	Add +orientation and -orientation to the state parameter as well
-13.	Save the parameters as a list to the buffer and resize it after reading from it 
-14.	The Actor and Critic model consists of 
+13. I also tried by adding Car Angle , Distance from goal and if the car is corrently on sand or road along with + orientation and - orientation ( These updates are in endgame_car_updt.py)
+14.	Save the parameters as a list to the buffer and resize it after reading from it 
+15.	The Actor and Critic model consists of 
      a.	Several conv2d layers 
     b.	Batch Normalization 
     c.	Strides 
@@ -213,5 +214,5 @@ Improvements to make
 ========================
 1.	Train car on road only, sand only and then append both for better learning
 2.	Create own environment file and train on gpu 
-3. Train for more number of steps 
+3.      Train for more number of steps 
 
